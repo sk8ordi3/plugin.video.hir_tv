@@ -1,5 +1,5 @@
 # plugin.video.hir_tv
-![Logo](resources/screenshots/screenshot-3.jpg)
+![Logo](icon.png)
 
 Kodi kiegészítő a hir_tv-hez
 
