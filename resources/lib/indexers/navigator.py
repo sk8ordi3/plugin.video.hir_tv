@@ -105,6 +105,9 @@ class navigator:
         kulfold_url = f"{base_url}/?block=Video_Endless_Ajax_2021&ajax=1&param=category=K%C3%BClf%C3%B6ld|videok_szama=150"
         kulfold_quoted_url = quote_plus(kulfold_url)
         self.addDirectoryItem("Külföld", f"ext_categs&url={kulfold_quoted_url}", '', 'DefaultFolder.png')
+        
+        #live:
+        self.addDirectoryItem("Élő", f"play_live&url=https://stream.hirtv.hu/delayed.php.m3u8", '', 'DefaultFolder.png', isFolder=False)        
 
         #-- TODO:
         # ezeknél valami miatt kevés tartalom jelenik csak meg
@@ -413,6 +416,16 @@ class navigator:
                 pass
             
             play_item.setProperty('inputstream.adaptive.manifest_type', 'hls')
+        
+        xbmcplugin.setResolvedUrl(syshandle, True, listitem=play_item)
+
+    def playLive(self, url):
+        
+        url_live = f'{url}|Origin=https%3A//hirtv.hu&Referer=https%3A//hirtv.hu&User-Agent=Mozilla/5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit/537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome/71.0.3578.98%20Safari/537.36'
+        
+        xbmc.log(f'{base_log_info}| playMovie | url_live: {url_live}', xbmc.LOGINFO)
+        
+        play_item = xbmcgui.ListItem(path=url_live)
         
         xbmcplugin.setResolvedUrl(syshandle, True, listitem=play_item)
 

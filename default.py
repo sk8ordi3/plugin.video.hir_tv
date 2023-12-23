@@ -60,3 +60,6 @@ elif action == 'ext_categs':
 
 elif action == 'play_movie':
     navigator.navigator().playMovie(url, image_url, full_title, genre)
+
+elif action == 'play_live':
+    navigator.navigator().playLive(url)
