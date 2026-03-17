@@ -1,3 +1,5 @@
+[B]1.0.2[/B]
+- élő adás javítva, minden más kiszedve mert átkerült a youtube-ra
 [B]1.0.1[/B]
 - élő adás hozzáadva
 [B]1.0.0[/B]
